@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // Project context for every session started in this folder.
+  "instructions": ["AGENTS.md"],
+
+  // Ignore generated/local preview files when watching the project.
+  "watcher": {
+    "ignore": ["node_modules/**", "dist/**", "coverage/**", ".cache/**"],
+  },
+}

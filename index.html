@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manas Shukla — CSE student at KIET University. C++, DSA, HTML, CSS, and a lifelong love for guitar and music." />
+  <meta name="theme-color" content="#070910" />
+  <title>Manas Shukla — Code & Chords</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page-glow" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="logo" href="#home" aria-label="Manas Shukla — home">
+        <span class="logo-mark">M<span>.</span></span>
+        <span class="logo-name">Manas <strong>Shukla</strong></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#music" class="nav-link">Music</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Let's connect <span aria-hidden="true">↗</span></a>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="badge reveal">
+            <span class="status-dot" aria-hidden="true"></span>
+            CSE · Section C · KIET University
+          </div>
+
+          <h1 class="reveal" style="--delay: 80ms">
+            Hi, I'm <span class="name-gradient">Manas Shukla</span>.<br />
+            I build with <span class="typing" id="typing">code</span><span class="type-caret" aria-hidden="true"></span><br />
+            and live for <em>chords.</em>
+          </h1>
+
+          <p class="hero-text reveal" style="--delay: 150ms">
+            A computer science student who likes turning tricky problems into clean C++,
+            shaping ideas with HTML &amp; CSS, and finding the same kind of rhythm in a
+            good piece of code as in a good guitar riff.
+          </p>
+
+          <div class="hero-actions reveal" style="--delay: 220ms">
+            <a href="#projects" class="btn btn-primary">View my work <span aria-hidden="true">→</span></a>
+            <a href="#about" class="btn btn-outline">More about me</a>
+          </div>
+
+          <div class="hero-socials reveal" style="--delay: 280ms" aria-label="Social links">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+
+        <div class="hero-art reveal" style="--delay: 160ms" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="code-window">
+            <div class="window-bar">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <span class="window-file">manas.cpp</span>
+              <span class="window-lang">C++</span>
+            </div>
+            <pre class="window-code"><code><span class="line-no">01</span> <span class="tok-key">#include</span> <span class="tok-str">&lt;iostream&gt;</span>
+<span class="line-no">02</span> <span class="tok-key">using namespace</span> std;
+<span class="line-no">03</span>
+<span class="line-no">04</span> <span class="tok-key">int</span> <span class="tok-fn">main</span>() {
+<span class="line-no">05</span>   <span class="tok-com">// think first, code second</span>
+<span class="line-no">06</span>   <span class="tok-type" id="typedCode"></span><span class="type-caret"></span>
+<span class="line-no">07</span>   <span class="tok-key">return</span> <span class="tok-num">0</span>;
+<span class="line-no">08</span> }</code></pre>
+            <div class="window-foot">
+              <div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span>compiling: ideas &amp; riffs</span>
+            </div>
+          </div>
+
+          <div class="float-chip chip-top">O(log n) ⚡</div>
+          <div class="float-chip chip-bottom">🎸 riff mode</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-stats reveal" style="--delay: 320ms">
+          <div class="hero-stat"><strong>04</strong><span>Core technologies</span></div>
+          <div class="hero-stat"><strong>C++</strong><span>Problem-solving language</span></div>
+          <div class="hero-stat"><strong>C</strong><span>CSE section at KIET</span></div>
+          <div class="hero-stat"><strong>∞</strong><span>Strings to play</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ticker ===== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>C++</span><b>✦</b><span>DSA</span><b>✦</b><span>HTML</span><b>✦</b><span>CSS</span><b>✦</b><span>Guitar</span><b>✦</b>
+        <span>C++</span><b>✦</b><span>DSA</span><b>✦</b><span>HTML</span><b>✦</b><span>CSS</span><b>✦</b><span>Guitar</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="section-heading reveal">
+          <span class="section-label">01 / About me</span>
+          <h2>A mind for logic,<br /><span class="accent-text">an ear for music.</span></h2>
+          <p>I'm Manas, a CSE student at KIET University who believes the best ideas come from curiosity, patience, and a willingness to try again.</p>
+        </div>
+
+        <div class="about-content">
+          <p class="lead reveal" style="--delay: 60ms">
+            I'm <strong>Manas Shukla</strong>, studying Computer Science and Engineering in
+            <strong>Section C</strong> at <strong>KIET University</strong>.
+          </p>
+          <p class="reveal" style="--delay: 120ms">
+            My foundation is built on the fundamentals. I use <strong>C++</strong> to think through
+            problems, <strong>Data Structures &amp; Algorithms</strong> to solve them efficiently, and
+            <strong>HTML &amp; CSS</strong> to turn ideas into things you can actually see and use.
+          </p>
+          <p class="reveal" style="--delay: 180ms">
+            Outside the editor, I'm a guitarist. Music taught me that progress is made one
+            repetition at a time — a lesson that quietly shaped the way I learn to code.
+          </p>
+
+          <div class="about-cards">
+            <article class="mini-card reveal" style="--delay: 220ms">
+              <span class="mini-icon">&lt;/&gt;</span>
+              <h3>The developer</h3>
+              <p>Curious about how things work, and always looking for a cleaner way to build them.</p>
+            </article>
+            <article class="mini-card reveal" style="--delay: 280ms">
+              <span class="mini-icon guitar-icon">♫</span>
+              <h3>The guitarist</h3>
+              <p>Chords, scales, and the quiet satisfaction of finally nailing that difficult part.</p>
+            </article>
+          </div>
+
+          <dl class="fact-grid reveal" style="--delay: 320ms">
+            <div><dt>Name</dt><dd>Manas Shukla</dd></div>
+            <div><dt>University</dt><dd>KIET University</dd></div>
+            <div><dt>Branch</dt><dd>CSE · Section C</dd></div>
+            <div><dt>Passion</dt><dd>Guitar &amp; music</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section class="section section-alt" id="education">
+      <div class="container split split-reverse">
+        <div class="section-heading reveal">
+          <span class="section-label">02 / Education</span>
+          <h2>Built on a strong<br /><span class="accent-text">foundation.</span></h2>
+          <p>College is where the fundamentals became a habit — and where I learned that the best way to understand something is to build with it.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal" style="--delay: 60ms">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card timeline-card-active">
+              <div class="timeline-top">
+                <span class="pill pill-live">Current</span>
+                <span class="timeline-meta">Section C</span>
+              </div>
+              <h3>KIET University</h3>
+              <p class="timeline-course">B.Tech · Computer Science &amp; Engineering</p>
+              <p>Focusing on programming fundamentals, data structures, algorithms, and the craft of building for the web.</p>
+              <div class="tag-row"><span>C++</span><span>DSA</span><span>HTML</span><span>CSS</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" style="--delay: 140ms">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top"><span class="pill">Self-driven</span></div>
+              <h3>Practice &amp; problem solving</h3>
+              <p class="timeline-course">The everyday classroom</p>
+              <p>Practice problems, debugging sessions, and small experiments that turned textbook concepts into real understanding.</p>
+              <div class="tag-row"><span>Logic</span><span>Consistency</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" style="--delay: 220ms">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top"><span class="pill">Beyond campus</span></div>
+              <h3>Music as a second teacher</h3>
+              <p class="timeline-course">Guitar &amp; rhythm</p>
+              <p>Learning an instrument taught me discipline, focus, and how to stay calm when something just won't sound right — yet.</p>
+              <div class="tag-row"><span>Patience</span><span>Creativity</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="heading-center reveal">
+          <span class="section-label">03 / Technical skills</span>
+          <h2>Tools I work <span class="accent-text">with.</span></h2>
+          <p>Four fundamentals I keep sharpening, every single week.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal" style="--delay: 60ms">
+            <div class="skill-head">
+              <span class="skill-icon">&lt;/&gt;</span>
+              <span class="skill-number">01</span>
+            </div>
+            <h3>C++</h3>
+            <p>My main language for problem solving, logic building, and understanding the details behind the code.</p>
+            <div class="meter" role="img" aria-label="C++ proficiency: strong"><span data-level="88%"></span></div>
+            <div class="tag-row"><span>OOP basics</span><span>STL</span><span>Logic</span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--delay: 120ms">
+            <div class="skill-head">
+              <span class="skill-icon skill-icon-cyan">⌘</span>
+              <span class="skill-number">02</span>
+            </div>
+            <h3>DSA</h3>
+            <p>Arrays, strings, linked lists, stacks, queues, trees, graphs, sorting and searching — thinking efficiently.</p>
+            <div class="meter" role="img" aria-label="DSA proficiency: strong"><span data-level="85%"></span></div>
+            <div class="tag-row"><span>Complexity</span><span>Recursion</span><span>Algorithms</span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--delay: 180ms">
+            <div class="skill-head">
+              <span class="skill-icon skill-icon-rose">&lt;h&gt;</span>
+              <span class="skill-number">03</span>
+            </div>
+            <h3>HTML</h3>
+            <p>Semantic, accessible structure — the solid foundation every good web experience is built on.</p>
+            <div class="meter" role="img" aria-label="HTML proficiency: comfortable"><span data-level="82%"></span></div>
+            <div class="tag-row"><span>Semantics</span><span>Accessibility</span><span>Forms</span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--delay: 240ms">
+            <div class="skill-head">
+              <span class="skill-icon skill-icon-gold">#</span>
+              <span class="skill-number">04</span>
+            </div>
+            <h3>CSS</h3>
+            <p>Flexbox, Grid, transitions and responsive layouts — making ideas feel considered on every screen.</p>
+            <div class="meter" role="img" aria-label="CSS proficiency: comfortable"><span data-level="80%"></span></div>
+            <div class="tag-row"><span>Flexbox</span><span>Grid</span><span>Animation</span></div>
+          </article>
+        </div>
+
+        <p class="skills-footnote reveal" style="--delay: 300ms">
+          <span aria-hidden="true">✦</span> Always learning: refining the fundamentals through practice problems and small builds.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="heading-center reveal">
+          <span class="section-label">04 / Projects</span>
+          <h2>Things I like <span class="accent-text">building.</span></h2>
+          <p>A few directions I explore to turn what I learn into something real.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" style="--delay: 60ms">
+            <div class="project-visual visual-code" aria-hidden="true">
+              <span class="visual-label">DSA / VISUAL</span>
+              <div class="code-lines"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="project-body">
+              <span class="project-status">In progress</span>
+              <h3>DSA Playground</h3>
+              <p>A small collection of interactive explanations for arrays, stacks, queues and sorting — built to make abstract concepts easier to see.</p>
+              <div class="tag-row"><span>C++</span><span>Algorithms</span><span>Learning</span></div>
+              <a href="#contact" class="project-link">Ask me about it <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 140ms">
+            <div class="project-visual visual-grid" aria-hidden="true">
+              <span class="visual-label">C++ / TOOLKIT</span>
+              <div class="node-graph"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="project-body">
+              <span class="project-status">Practice project</span>
+              <h3>C++ Problem Kit</h3>
+              <p>Reusable little utilities and solved patterns from problem-solving sessions — a personal notebook written in code.</p>
+              <div class="tag-row"><span>C++</span><span>DSA</span><span>Problem solving</span></div>
+              <a href="#contact" class="project-link">Ask me about it <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 220ms">
+            <div class="project-visual visual-web" aria-hidden="true">
+              <span class="visual-label">WEB / PORTFOLIO</span>
+              <div class="browser-mock"><i></i><i></i><i></i><b></b><b></b></div>
+            </div>
+            <div class="project-body">
+              <span class="project-status project-status-live">Live now</span>
+              <h3>This Portfolio</h3>
+              <p>A responsive personal site built from scratch with semantic HTML, modern CSS and a touch of JavaScript for the details.</p>
+              <div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <a href="#home" class="project-link">Back to top <span aria-hidden="true">↑</span></a>
+            </div>
+          </article>
+        </div>
+
+        <p class="projects-note reveal" style="--delay: 300ms">More experiments are on the way — I'm building in public, one idea at a time.</p>
+      </div>
+    </section>
+
+    <!-- ===== Music ===== -->
+    <section class="section" id="music">
+      <div class="container">
+        <div class="music-panel reveal">
+          <div class="music-copy">
+            <span class="section-label">05 / Guitar &amp; music</span>
+            <h2>Same patience.<br /><span class="accent-text">Different strings.</span></h2>
+            <p>
+              When I step away from the editor, I pick up a guitar. Music is where I switch off
+              the compiler and switch on the feeling — chords, rhythm, and the quiet joy of
+              getting better one practice session at a time.
+            </p>
+            <div class="music-chips">
+              <span>♫ Riffs</span><span>♫ Chords</span><span>♫ Practice</span>
+            </div>
+            <blockquote>“Every wrong note has a next one. Every bug has a fix.”</blockquote>
+          </div>
+
+          <div class="fretboard" aria-hidden="true">
+            <div class="fret-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="guitar-strings"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="fret-dots"><b style="--x: 14%; --y: 24%">E</b><b style="--x: 36%; --y: 52%">A</b><b style="--x: 58%; --y: 34%">D</b><b style="--x: 78%; --y: 68%">G</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-copy reveal">
+          <span class="section-label">06 / Contact</span>
+          <h2>Let's make something<br /><span class="accent-text">worth shipping.</span></h2>
+          <p>Have a project, a question, or just want to talk code and music? I'd love to hear from you.</p>
+
+          <a class="email-link" href="mailto:manas.shukla@email.com">manas.shukla@email.com <span aria-hidden="true">↗</span></a>
+
+          <div class="social-links" aria-label="Social links">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" style="--delay: 120ms">
+          <div class="form-row">
+            <label>Your name<input type="text" name="name" placeholder="Your name" required /></label>
+            <label>Your email<input type="email" name="email" placeholder="you@example.com" required /></label>
+          </div>
+          <label>Message<textarea name="message" rows="5" placeholder="Tell me what you're working on..." required></textarea></label>
+          <button type="submit" class="btn btn-primary btn-block">Send message <span aria-hidden="true">→</span></button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite">This opens your email app — nothing is stored here.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Manas Shukla. Built with code, curiosity &amp; chords.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

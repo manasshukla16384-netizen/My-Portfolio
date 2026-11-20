@@ -1,0 +1,203 @@
+/* =========================================================
+   Manas Shukla — Portfolio interactions
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Footer year ---------- */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- Header state + scroll progress ---------- */
+  const header = document.getElementById("siteHeader");
+  const progress = document.getElementById("scrollProgress");
+
+  const updateScrollUI = () => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0}%`;
+  };
+  updateScrollUI();
+  window.addEventListener("scroll", updateScrollUI, { passive: true });
+  window.addEventListener("resize", updateScrollUI);
+
+  /* ---------- Mobile menu ---------- */
+  const menuBtn = document.getElementById("menuBtn");
+  const nav = document.getElementById("nav");
+
+  const closeMenu = () => {
+    nav.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "Open menu");
+  };
+
+  menuBtn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+
+  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  const revealItems = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || reduceMotion) {
+    revealItems.forEach((item) => item.classList.add("visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+
+  /* ---------- Active nav link ---------- */
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+          });
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+
+  /* ---------- Skill meters ---------- */
+  const meters = document.querySelectorAll(".meter span");
+  const fillMeters = () => meters.forEach((meter) => { meter.style.width = meter.dataset.level; });
+  if (!("IntersectionObserver" in window) || reduceMotion) {
+    fillMeters();
+  } else {
+    const meterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          fillMeters();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    meters.forEach((meter) => meterObserver.observe(meter));
+  }
+
+  /* ---------- Typing hero word ---------- */
+  const words = ["code", "logic", "ideas", "music"];
+  const typingTarget = document.getElementById("typing");
+
+  if (!reduceMotion) {
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = true;
+
+    const typeWord = () => {
+      const current = words[wordIndex];
+      charIndex += deleting ? -1 : 1;
+      typingTarget.textContent = current.slice(0, charIndex);
+
+      if (!deleting && charIndex === current.length) {
+        deleting = true;
+        setTimeout(typeWord, 1700);
+        return;
+      }
+      if (deleting && charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeWord, 280);
+        return;
+      }
+      setTimeout(typeWord, deleting ? 70 : 125);
+    };
+    setTimeout(typeWord, 2200);
+  }
+
+  /* ---------- Typed C++ line ---------- */
+  const snippets = [
+    'cout << "Hello, world!";',
+    "solve(arr, n);",
+    'cout << "Keep building";',
+    "playGuitar(riff);",
+  ];
+  const codeTarget = document.getElementById("typedCode");
+
+  if (reduceMotion) {
+    codeTarget.textContent = snippets[0];
+  } else {
+    let snippetIndex = 0;
+    let codeIndex = 0;
+    let codeDeleting = false;
+
+    const typeCode = () => {
+      const current = snippets[snippetIndex];
+      codeIndex += codeDeleting ? -1 : 1;
+      codeTarget.textContent = current.slice(0, codeIndex);
+
+      if (!codeDeleting && codeIndex === current.length) {
+        codeDeleting = true;
+        setTimeout(typeCode, 1900);
+        return;
+      }
+      if (codeDeleting && codeIndex === 0) {
+        codeDeleting = false;
+        snippetIndex = (snippetIndex + 1) % snippets.length;
+        setTimeout(typeCode, 320);
+        return;
+      }
+      setTimeout(typeCode, codeDeleting ? 45 : 85);
+    };
+    setTimeout(typeCode, 650);
+  }
+
+  /* ---------- Cursor glow ---------- */
+  const glow = document.getElementById("cursorGlow");
+  if (!reduceMotion && glow && window.matchMedia("(pointer: fine)").matches) {
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+    let currentX = targetX;
+    let currentY = targetY;
+
+    window.addEventListener("mousemove", (event) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+    }, { passive: true });
+
+    const followCursor = () => {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      glow.style.left = `${currentX}px`;
+      glow.style.top = `${currentY}px`;
+      requestAnimationFrame(followCursor);
+    };
+    followCursor();
+  }
+
+  /* ---------- Contact form → email app ---------- */
+  const form = document.getElementById("contactForm");
+  const formNote = document.getElementById("formNote");
+  const email = "manas.shukla@email.com";
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const subject = `Portfolio message from ${data.get("name")}`;
+    const body = `${data.get("message")}\n\n— ${data.get("name")}\n${data.get("email")}`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    formNote.textContent = "Your email app should open now — keep this tab open just in case.";
+  });
+});
